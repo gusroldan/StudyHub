@@ -27,7 +27,6 @@ export class Tab1Page implements OnInit {
   }
 
   validateUser(username: string, password: string): boolean {
-    // Lógica de validación simple (puedes reemplazar con una validación real)
     return username === 'test' && password === 'test';
   }
 }
