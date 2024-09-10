@@ -15,32 +15,25 @@
     <p>Conéctate con expertos y compañeros para potenciar tu aprendizaje y ofrecer tu ayuda.</p>
     <p>¡Tu camino hacia el conocimiento comienza aquí!</p>
   </div>
-  
-  
 
   <div class="form-container">
     <ion-list>
       <ion-item>
-        <ion-label class="usercampo" position="floating">Usuario/Correo</ion-label>
-        <br>
-        <ion-input></ion-input>
+        <ion-label position="floating">Usuario/Correo</ion-label>
+        <ion-input id="username"></ion-input>
       </ion-item>
-      
-      
 
       <ion-item>
-        <ion-label class="usercontra" position="floating">Contraseña</ion-label>
-        <br>
-        <ion-input type="password"></ion-input>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input id="password" type="password"></ion-input>
       </ion-item>
-      <ion-button class="botonlogin" expand="block">Iniciar Sesión</ion-button>
-      <ion-button class="registrarboton" expand="block">Regístrate</ion-button>
-      <ion-item>
-        <a class="forgot-password-link">Olvidé mi contraseña</a>
-      </ion-item>
-      
     </ion-list>
+
+    <ion-button id="loginButton" class="botonlogin" expand="block">Iniciar Sesión</ion-button>
+    <ion-button class="registrarboton" expand="block">Regístrate</ion-button>
+
+    <ion-item lines="none">
+      <a class="forgot-password-link">Olvidé mi contraseña</a>
+    </ion-item>
   </div>
-
 </ion-content>
-
