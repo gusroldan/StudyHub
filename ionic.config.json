@@ -1,0 +1,7 @@
+{
+  "name": "StudyHub",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
