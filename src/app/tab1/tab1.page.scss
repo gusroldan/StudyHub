@@ -36,10 +36,7 @@ ion-content {
   h1 {
     text-align: center; 
     color: #792983;
-  }
-  p {
-    text-align: center; 
-    margin-top: 10px; 
+    font-family: 'Roboto', sans-serif;
   }
   .forgot-password-link {
     color: #792983; 
@@ -61,4 +58,8 @@ ion-content {
     margin-top: 20px;
     height: auto; 
   }
-  
+.Textoinicio{
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  }
