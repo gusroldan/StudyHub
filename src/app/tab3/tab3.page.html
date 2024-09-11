@@ -1,17 +1,71 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
+    <ion-title class="titulo">
+      Perfil Personal
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="profile-content">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Perfi Personal</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <h1 style="text-align: center; color: #252525;">Bienvenido:</h1>
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" class="ion-text-center">
+        <!-- Nombre -->
+        <ion-label class="profile-name">
+          <h2>Roberto Rivas</h2>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+  <ion-grid class="profile-grid">
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="100" class="ion-text-center">
+        <!-- Contenedor para la foto de perfil -->
+        <ion-avatar class="profile-avatar">
+          <img src="https://pbs.twimg.com/card_img/1833266842808283136/RUujYV3R?format=png&name=360x360" alt="Foto de perfil" />        
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" class="ion-text-center">
+        <!-- Descripción -->
+        <ion-item lines="none" class="profile-item">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label>Me llamo Roberto y me gusta estudiar programación web, pero mi debilidad es Base de Datos con Germán Barrientos.</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    
+
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" class="ion-text-center">
+        <!-- Correo -->
+        <ion-item lines="none" class="profile-item">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-label>mazino&#64;duocuc.cl</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" class="ion-text-center">
+        <!-- Número de teléfono -->
+        <ion-item lines="none" class="profile-item">
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          <ion-label>+56 938659045</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    
+
+    
+  </ion-grid>
 </ion-content>

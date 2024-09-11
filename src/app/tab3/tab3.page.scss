@@ -1,0 +1,46 @@
+.profile-content {
+    background-color: linear-gradient(145deg, #6a11cb, #000000);;
+    --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado morado y negro */
+    color: white; /* Texto blanco para contraste */
+  }
+  
+  .profile-grid {
+    padding-top: 50px;
+  }
+  
+  .profile-avatar {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-name h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .profile-item {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+  
+  ion-item.profile-item ion-icon {
+    color: white;
+  }
+  
+  ion-item.profile-item ion-label {
+    color: white;
+  }
+  
+  ion-avatar img {
+    border-radius: 50%;
+  }
+  .titulo{
+    background-color: #6a11cb ;
+  }
+  

@@ -1,5 +1,5 @@
 ion-content {
-    --background: #0000; 
+    --background: #792983; 
   
   }
   .form-container {
@@ -19,7 +19,7 @@ ion-content {
   
   .botonlogin {
     margin:0 auto;
-    width: 60%;
+    width: 40%;
     --background: #792983; 
     --border-radius: 20px; 
     --padding-start: 10px;
@@ -28,7 +28,7 @@ ion-content {
   .registrarboton{
     margin:0 auto;
     margin-top: 20px;
-    width: 60%;
+    width: 40%;
     --background: #792983; 
     --border-radius: 20px; 
     --padding-start: 10px;
@@ -39,9 +39,9 @@ ion-content {
     text-align: center; 
     color: #792983;
     font-family: 'Roboto', sans-serif;
+    margin: 0px 0; /* Ajusta los márgenes superior e inferior */
   }
   .olvidarclave {
-
   color: #792983;
   display: block; 
   width: fit-content; 
@@ -66,4 +66,12 @@ ion-content {
 .Textoinicio{
   margin-top: 40px;
   text-align: center;
+  }
+
+  .profile-content {
+    --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado morado y negro */
+    color: white; /* Texto blanco para contraste */
+  }
+  .ioncarta{
+    background-color: #6a11cb;
   }
