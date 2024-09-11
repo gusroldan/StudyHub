@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Enviar Mensaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Enviar Mensaje</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="content-wrapper">
+    <ion-textarea placeholder="escriba aqui..."></ion-textarea>
+    
+    <ion-button style="margin-top: 16px;"(click)="sendMessage()">
+      Enviar
+    </ion-button>
+  </div>
+</ion-content>

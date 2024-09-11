@@ -11,7 +11,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule)
   },
-  // Otras rutas aquí
+  {
+    path: 'enviar-mensaje',
+    loadChildren: () => import('./enviar-mensaje/enviar-mensaje.module').then( m => m.EnviarMensajePageModule)
+  },
+
 ];
 
 @NgModule({

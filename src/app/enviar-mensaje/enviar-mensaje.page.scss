@@ -1,0 +1,28 @@
+:host {
+    ion-content {
+      --background: linear-gradient(145deg, #6a11cb, #000000);
+    }
+  
+    .content-wrapper {
+      padding: 0 16px;
+    }
+  
+    ion-textarea {
+        margin-top: 16px;
+        background: rgba(0, 0, 0, 0.5);
+        --color: #6a11cb;
+        height: 150px;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-start;
+        padding-left: 8px;
+    }
+  
+    ion-button {
+      --background: rgba(0, 0, 0, 0.5); 
+      --color: #6a11cb; 
+      --background-activated: rgba(0, 0, 0, 0.5); 
+      --background-focused: rgba(0, 0, 0, 0.5); 
+      --background-hover: rgba(0, 0, 0, 0.5); 
+    }
+  }
