@@ -15,7 +15,7 @@ export class EnviarMensajePage {
   }
 
   sendMessage() {
-    // Lógica para enviar el mensaje
     console.log('Mensaje enviado');
+    this.navCtrl.back();
   }
 }
