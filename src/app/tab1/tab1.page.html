@@ -1,4 +1,3 @@
-
 <ion-content [fullscreen]="true" class="profile-content">
 
 
@@ -12,24 +11,16 @@
     <p>¡Tu camino hacia el conocimiento comienza aquí!</p>
   </div>
 
-  <div class="form-container">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Usuario/Correo</ion-label>
-        <ion-input id="username"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating" >Contraseña</ion-label>
-        <ion-input id="password" type="password"></ion-input>
-      </ion-item>
-    </ion-list>
-
-    <ion-button id="loginButton" class="botonlogin" expand="block">Iniciar Sesión</ion-button>
-    <ion-button class="registrarboton" expand="block">Regístrate</ion-button>
-
-    <ion-item lines="none">
-      <a class="olvidarclave">Olvidé mi contraseña</a>
+  <form (submit)="login()">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="username" name="username" required></ion-input>
     </ion-item>
-  </div>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
+    <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+  </form>
 </ion-content>

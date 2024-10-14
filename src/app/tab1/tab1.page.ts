@@ -1,34 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component } from '@angular/core';
+import { AuthService } from '../auth.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: './tab1.page.html',
   styleUrls: ['./tab1.page.scss'],
 })
-export class Tab1Page implements OnInit {
+export class Tab1Page {
+  username: string = ''; 
+  password: string = ''; 
+  errorMessage: string = ''; 
 
-  constructor(private navCtrl: NavController) {}
-
-  ngOnInit() {
-    document.getElementById('loginButton')?.addEventListener('click', () => this.login());
-  }
+  constructor(private authService: AuthService, private router: Router) {}
 
   login() {
-    const username = (document.getElementById('username') as HTMLInputElement).value;
-    const password = (document.getElementById('password') as HTMLInputElement).value;
-
-    if (this.validateUser(username, password)) {
-      // Navegar a la segunda pestaña (Tab2)
-      this.navCtrl.navigateRoot('/tabs/tab2');
+    const isLoggedIn = this.authService.login(this.username, this.password); 
+    if (isLoggedIn) {
+      this.router.navigate(['/tabs']); 
     } else {
-      console.log('Credenciales inválidas');
+      this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.'; 
     }
   }
-
-  validateUser(username: string, password: string): boolean {
-    return username === 'test' && password === 'test';
-  }
 }
-
-
