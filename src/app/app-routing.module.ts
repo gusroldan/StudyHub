@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'enviar-mensaje',
     loadChildren: () => import('./enviar-mensaje/enviar-mensaje.module').then( m => m.EnviarMensajePageModule)
   },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+  },
 
 ];
 
