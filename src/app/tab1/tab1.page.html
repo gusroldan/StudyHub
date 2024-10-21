@@ -5,22 +5,4 @@
     <img src="\assets\logo.png" alt="StudyHub logo" width="300"/>
   </div>
 
-  <h1>Bienvenido a StudyHub</h1>
-  <div class="Textoinicio">
-    <p>Conéctate con expertos y compañeros para potenciar tu aprendizaje y ofrecer tu ayuda.</p>
-    <p>¡Tu camino hacia el conocimiento comienza aquí!</p>
-  </div>
-
-  <form (submit)="login()">
-    <ion-item>
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input [(ngModel)]="username" name="username" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
-    </ion-item>
-    <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
-    <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
-  </form>
 </ion-content>
