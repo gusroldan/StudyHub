@@ -1,0 +1,77 @@
+ion-content {
+    --background: #792983; 
+  
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; 
+    text-align: center;
+  }
+  
+  ion-item {
+    width: 90%; 
+    margin-bottom: 15px; 
+    
+  }
+  
+  
+  .form {
+    margin:0 auto;
+    width: 40%;
+    --background: #792983; 
+    --border-radius: 20px; 
+    --padding-start: 10px;
+    --padding-end: 15px;
+  }
+  .registrarboton{
+    margin:0 auto;
+    margin-top: 20px;
+    width: 40%;
+    --background: #792983; 
+    --border-radius: 20px; 
+    --padding-start: 10px;
+    --padding-end: 15px;
+  }
+  
+  h1 {
+    text-align: center; 
+    color: #792983;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px 0; /* Ajusta los márgenes superior e inferior */
+  }
+  .olvidarclave {
+  color: #792983;
+  display: block; 
+  width: fit-content; 
+  margin: 0 auto; 
+  }
+  .usercampo{
+    margin-left: 40px;
+    width: 90%;
+  }
+  .usercontra{
+    margin-left: 50px;
+    width: 90%;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%; 
+    margin-top: 20px;
+    height: auto; 
+  }
+.Textoinicio{
+  margin-top: 40px;
+  text-align: center;
+  }
+
+  .profile-content {
+    --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado morado y negro */
+    color: white; /* Texto blanco para contraste */
+  }
+  .ioncarta{
+    background-color: #6a11cb;
+  }
