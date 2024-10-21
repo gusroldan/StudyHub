@@ -8,23 +8,22 @@ export class AuthService {
   private validCredentials = { username: 'user', password: 'password' }; 
 
   constructor() {
-    // Inicializa el estado de autenticación desde localStorage
     this.checkLocalStorage();
   }
 
   private checkLocalStorage() {
     const token = localStorage.getItem('token');
     if (token) {
-      this.authenticated = true; // Si hay un token, el usuario está autenticado
+      this.authenticated = true;
     } else {
-      this.authenticated = false; // Si no hay token, no está autenticado
+      this.authenticated = false;
     }
   }
 
   login(username: string, password: string): boolean {
     if (username === this.validCredentials.username && password === this.validCredentials.password) {
       this.authenticated = true; 
-      localStorage.setItem('token', 'your_token_here'); // Guarda el token en localStorage
+      localStorage.setItem('token', 'your_token_here');
       return true;
     }
     return false; 
