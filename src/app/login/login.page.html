@@ -1,6 +1,4 @@
 <ion-content [fullscreen]="true" class="profile-content">
-
-
   <div class="image-container">
     <img src="\assets\logo.png" alt="StudyHub logo" width="300"/>
   </div>
@@ -11,10 +9,10 @@
     <p>¡Tu camino hacia el conocimiento comienza aquí!</p>
   </div>
 
-  <form (submit)="login()">
+  <form (ngSubmit)="login($event)">
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input [(ngModel)]="username" name="username" required></ion-input>
+      <ion-input [(ngModel)]="email" name="email" required></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>

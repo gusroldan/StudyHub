@@ -6,7 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
 const db = mysql.createConnection({
   host: 'localhost',     
   user: 'root',   
@@ -29,6 +28,24 @@ app.get('/api/usuario', (req, res) => {
       return;
     }
     res.json(results);
+  });
+});
+
+app.post('/api/login', (req, res) => {
+  const { email, password } = req.body;
+
+  const query = 'SELECT * FROM usuario WHERE email = ? AND contraseña = ?';
+  db.query(query, [email, password], (error, results) => {
+    if (error) {
+      return res.status(500).json({ error: 'Error en el servidor' });
+    }
+
+    if (results.length > 0) {
+      const token = 'your_generated_token';
+      res.json({ token });
+    } else {
+      res.status(401).json({ error: 'Credenciales inválidas' });
+    }
   });
 });
 

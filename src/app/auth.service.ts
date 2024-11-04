@@ -1,40 +1,41 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private authenticated = false;
-  private validCredentials = { username: 'user', password: 'password' }; 
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.checkLocalStorage();
   }
 
   private checkLocalStorage() {
     const token = localStorage.getItem('token');
-    if (token) {
-      this.authenticated = true;
-    } else {
-      this.authenticated = false;
-    }
+    this.authenticated = !!token;
   }
 
-  login(username: string, password: string): boolean {
-    if (username === this.validCredentials.username && password === this.validCredentials.password) {
-      this.authenticated = true; 
-      localStorage.setItem('token', 'your_token_here');
-      return true;
-    }
-    return false; 
+  login(email: string, password: string): Observable<any> {
+    return this.http.post<{ token: string }>('http://localhost:3000/api/login', { email, password })
+      .pipe(
+        tap(response => {
+          if (response.token) {
+            localStorage.setItem('token', response.token);
+            this.authenticated = true;
+          }
+        })
+      );
   }
 
   logout() {
-    this.authenticated = false; 
-    localStorage.removeItem('token'); // Elimina el token de localStorage
+    this.authenticated = false;
+    localStorage.removeItem('token');
   }
 
   isAuthenticated(): boolean {
-    return this.authenticated; 
+    return this.authenticated;
   }
 }

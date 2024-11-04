@@ -8,18 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  username: string = ''; 
+  email: string = ''; 
   password: string = ''; 
   errorMessage: string = ''; 
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
-    const isLoggedIn = this.authService.login(this.username, this.password); 
-    if (isLoggedIn) {
-      this.router.navigate(['/tabs']); 
-    } else {
-      this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.'; 
-    }
+  login(event: Event) {
+    event.preventDefault();
+    
+    this.authService.login(this.email, this.password).subscribe({
+      next: () => {
+        this.router.navigate(['/tabs']);
+      },
+      error: (err) => {
+        this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
+        console.error('Error de autenticación:', err);
+      }
+    });
   }
 }
