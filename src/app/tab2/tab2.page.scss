@@ -3,10 +3,14 @@
   }
 
   ion-card {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(20, 20, 20, 0.5);
     border-radius: 20px;
+    color: white;
   }
 
   ion-button {
     color: #6a11cb;
+  }
+  ion-card-title{
+    color: white;
   }
