@@ -1,8 +1,31 @@
-<ion-content [fullscreen]="true" class="profile-content">
-
-
+<ion-content class="ion-padding">
   <div class="image-container">
-    <img src="\assets\logo.png" alt="StudyHub logo" width="300"/>
+    <img src="assets/logo.png" alt="StudyHub logo" width="300"/>
+  </div>
+  <div class="intro">
+    <h1>Conecta y Aprende</h1>
+    <p>StudyHub es la plataforma que facilita el contacto entre estudiantes que buscan ayuda y aquellos que ofrecen tutorías.</p>
   </div>
 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¿Qué ofrecemos?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li>Asesorías personalizadas en diversas materias.</li>
+        <li>Oportunidades para enseñar y ganar dinero.</li>
+        <li>Comunidad de estudiantes para intercambiar conocimientos.</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" class="custom-button-1" routerLink="/tabs/tab2">
+    Ver Estudiantes
+  </ion-button>
+  
+  <ion-button expand="full" class="custom-button-2" routerLink="/tabs/tab3">
+    Revisa tu propio perfil
+  </ion-button>
+  
 </ion-content>
