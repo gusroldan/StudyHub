@@ -12,7 +12,9 @@ export class LoginPage {
   password: string = ''; 
   errorMessage: string = ''; 
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {
+    authService.isAuthenticated();
+  }
 
   login(event: Event) {
     event.preventDefault();

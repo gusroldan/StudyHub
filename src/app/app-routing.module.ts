@@ -25,7 +25,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'not-found',
   },
-
 ];
 
 @NgModule({
@@ -33,4 +32,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-

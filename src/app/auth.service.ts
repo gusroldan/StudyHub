@@ -25,6 +25,7 @@ export class AuthService {
           if (response.token) {
             localStorage.setItem('token', response.token);
             this.authenticated = true;
+            this.checkLocalStorage(); // Verificación adicional después del login
           }
         })
       );
@@ -33,9 +34,11 @@ export class AuthService {
   logout() {
     this.authenticated = false;
     localStorage.removeItem('token');
+    this.checkLocalStorage(); // Verificación adicional después del logout
   }
 
   isAuthenticated(): boolean {
+    console.log('Authenticated:', this.authenticated); // Para verificar si el estado es correcto
     return this.authenticated;
   }
 }
