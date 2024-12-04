@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -9,7 +8,10 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   private authenticated = false;
 
-  constructor(private http: HttpClient) {
+  private readonly defaultEmail = 'admin';
+  private readonly defaultPassword = 'admin';
+
+  constructor() {
     this.checkLocalStorage();
   }
 
@@ -18,27 +20,26 @@ export class AuthService {
     this.authenticated = !!token;
   }
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post<{ token: string }>('http://localhost:3000/api/login', { email, password })
-      .pipe(
-        tap(response => {
-          if (response.token) {
-            localStorage.setItem('token', response.token);
-            this.authenticated = true;
-            this.checkLocalStorage(); // Verificación adicional después del login
-          }
-        })
-      );
+  login(): Observable<any> {
+    if (this.defaultEmail === 'admin' && this.defaultPassword === 'admin') {
+      const token = 'fake-jwt-token'; 
+      localStorage.setItem('token', token);
+      this.authenticated = true;
+      this.checkLocalStorage();
+      return of({ token });
+    } else {
+      return of({ error: 'Credenciales incorrectas' });
+    }
   }
 
   logout() {
     this.authenticated = false;
     localStorage.removeItem('token');
-    this.checkLocalStorage(); // Verificación adicional después del logout
+    this.checkLocalStorage();
   }
 
   isAuthenticated(): boolean {
-    console.log('Authenticated:', this.authenticated); // Para verificar si el estado es correcto
+    console.log('Authenticated:', this.authenticated);
     return this.authenticated;
   }
 }
