@@ -1,6 +1,6 @@
 .profile-content {
-    background-color: linear-gradient(145deg, #6a11cb, #000000);;
-    --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado morado y negro */
+    background-color: linear-gradient(145deg, #a474b7, #000000);;
+    --background: linear-gradient(145deg, #a474b7, #000000); /* Fondo degradado morado y negro */
     color: white; /* Texto blanco para contraste */
   }
   
@@ -20,7 +20,7 @@
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .profile-item {
@@ -34,7 +34,7 @@
   }
   
   ion-item.profile-item ion-label {
-    color: #6a11cb;
+    color: #000000;
   }
   
   ion-avatar img {

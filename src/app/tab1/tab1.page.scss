@@ -1,5 +1,5 @@
 ion-content {
-  --background: #7929831b;
+  --background: #a474b7;
 }
 
 .form-container {
@@ -16,6 +16,7 @@ ion-item {
 }
 
 .form {
+  border: 1px solid #ffffff33;
   margin: 0 auto;
   width: 40%;
   --background: #792983; 
@@ -80,4 +81,12 @@ h1 {
 .custom-button-2 {
   --background: #792983; /* Color verde */
   --color: white; /* Texto en blanco */
+}
+ion-card {
+  border: 1px solid #ffffff33;
+  background-color: #792983;
+}
+
+li {
+  color: aliceblue;
 }
