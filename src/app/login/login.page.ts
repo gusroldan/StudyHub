@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth.service'; 
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,22 +13,24 @@ export class LoginPage {
   errorMessage: string = ''; 
 
   constructor(private authService: AuthService, private router: Router) {
-    // Verifica si el usuario ya está autenticado
-    this.authService.isAuthenticated();
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/tabs']); 
+    }
   }
 
   login(event: Event) {
     event.preventDefault();
-
-    // Llamamos al login sin pasar email y password, ya que los valores están definidos en AuthService
-    this.authService.login().subscribe({
-      next: () => {
-        // Redirige a la página de tabs después del login exitoso
-        this.router.navigate(['/tabs']);
+    
+    this.authService.login(this.email, this.password).subscribe({
+      next: (response) => {
+        if (response.token) {
+          this.router.navigate(['/tabs']);
+        } else {
+          this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.'; 
+        }
       },
       error: (err) => {
-        // Si ocurre un error, mostramos un mensaje de error
-        this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
+        this.errorMessage = 'Hubo un error al intentar iniciar sesión. Intenta de nuevo.';
         console.error('Error de autenticación:', err);
       }
     });

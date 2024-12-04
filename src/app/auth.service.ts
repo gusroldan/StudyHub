@@ -20,14 +20,15 @@ export class AuthService {
     this.authenticated = !!token;
   }
 
-  login(): Observable<any> {
-    if (this.defaultEmail === 'admin' && this.defaultPassword === 'admin') {
+  login(email: string, password: string): Observable<any> {
+    if (email === this.defaultEmail && password === this.defaultPassword) {
       const token = 'fake-jwt-token'; 
       localStorage.setItem('token', token);
       this.authenticated = true;
       this.checkLocalStorage();
       return of({ token });
     } else {
+      this.authenticated = false;
       return of({ error: 'Credenciales incorrectas' });
     }
   }
