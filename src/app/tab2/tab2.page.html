@@ -105,4 +105,26 @@
     </ion-card-content>
     <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
   </ion-card>
+
+  <ion-card *ngIf="user.isTutor">
+    <img alt="Silhouette of mountains" src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/dia-de-la-juventud-por-que-estudiar-de-joven-una-carrera-universitaria-universidad-continental-2.jpg" alt="Foto de perfil" />
+    <ion-card-header>
+      <ion-card-title>{{ user.name }}</ion-card-title>
+      <ion-card-subtitle>Estudiante de 4do año</ion-card-subtitle>
+      <ion-row class="ion-justify-content-center ion-padding">
+        <ion-col size="12" class="ion-text-center">
+          <!-- Correo -->
+          <ion-item lines="none" class="profile-item">
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-label>{{ user.email }}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      
+    </ion-card-header>
+    <ion-card-content>
+      {{ user.description }}
+    </ion-card-content>
+    <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+  </ion-card>
 </ion-content>

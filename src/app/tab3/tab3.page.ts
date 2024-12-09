@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { UserService } from '../services/user.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -8,11 +8,20 @@ import { AuthService } from '../auth.service';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  user: any = {};
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private userService: UserService, private navCtrl: NavController) {
+    this.user = this.userService.getUser();
+  }
+
+  toggleTutor() {
+    this.userService.updateUser(this.user);
+  }
 
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/login']);
+    // Aquí puedes agregar la lógica para cerrar sesión
+    console.log('Cerrando sesión...');
+    // Redirigir a la página de inicio de sesión
+    this.navCtrl.navigateRoot('/login');
   }
 }
