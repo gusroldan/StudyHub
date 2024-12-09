@@ -9,32 +9,38 @@
 <ion-content [fullscreen]="true" class="profile-content">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Perfi Personal</ion-title>
+      <ion-title size="large">Perfil Personal</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <h1 style="text-align: center; color: #252525;">Bienvenido:</h1>
-    <ion-row class="ion-justify-content-center ion-padding">
-      <ion-col size="12" class="ion-text-center">
-        <!-- Nombre -->
-        <ion-label class="profile-name">
-          <h1>
+  <ion-row class="ion-justify-content-center ion-padding">
+    <ion-col size="12" class="ion-text-center">
+      <!-- Nombre -->
+      <ion-label class="profile-name">
+        <h1>
           <ion-input [(ngModel)]="user.name"></ion-input>
         </h1>
-        </ion-label>
-      </ion-col>
-    </ion-row>
+      </ion-label>
+    </ion-col>
+  </ion-row>
 
   <ion-grid class="profile-grid">
     <ion-row class="ion-justify-content-center ion-padding">
       <ion-col size="100" class="ion-text-center">
         <!-- Contenedor para la foto de perfil -->
         <ion-avatar class="profile-avatar">
-          <img src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/dia-de-la-juventud-por-que-estudiar-de-joven-una-carrera-universitaria-universidad-continental-2.jpg" alt="Foto de perfil" />        
+          <img *ngIf="user.profilePhoto" [src]="user.profilePhoto" alt="Foto de perfil" />
+          <img *ngIf="!user.profilePhoto" src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/dia-de-la-juventud-por-que-estudiar-de-joven-una-carrera-universitaria-universidad-continental-2.jpg" alt="Foto de perfil" />
         </ion-avatar>
+        <!-- Botón para tomar foto -->
+        <ion-button expand="block" color="primary" (click)="takeProfilePhoto()" style="margin-top: 10px;">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Cambiar Foto
+        </ion-button>
       </ion-col>
     </ion-row>
-    
+
     <ion-row class="ion-justify-content-center ion-padding">
       <ion-col size="12" class="ion-text-center">
         <!-- Descripción -->
@@ -44,7 +50,6 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    
 
     <ion-row class="ion-justify-content-center ion-padding">
       <ion-col size="12" class="ion-text-center">
@@ -74,5 +79,4 @@
     <ion-icon slot="start" name="log-out-outline"></ion-icon>
     Cerrar Sesión
   </ion-button>
-  
 </ion-content>

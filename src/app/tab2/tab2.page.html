@@ -107,7 +107,8 @@
   </ion-card>
 
   <ion-card *ngIf="user.isTutor">
-    <img alt="Silhouette of mountains" src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/dia-de-la-juventud-por-que-estudiar-de-joven-una-carrera-universitaria-universidad-continental-2.jpg" alt="Foto de perfil" />
+    <img *ngIf="user.profilePhoto" [src]="user.profilePhoto" alt="Foto de perfil" />
+    <img *ngIf="!user.profilePhoto" src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/dia-de-la-juventud-por-que-estudiar-de-joven-una-carrera-universitaria-universidad-continental-2.jpg" alt="Foto de perfil" />
     <ion-card-header>
       <ion-card-title>{{ user.name }}</ion-card-title>
       <ion-card-subtitle>Estudiante de 4do año</ion-card-subtitle>
