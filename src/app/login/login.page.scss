@@ -1,77 +1,94 @@
 ion-content {
-  --background: #7929831b;
-  
-  }
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px; 
-    text-align: center;
-  }
-  
-  ion-item {
-    width: 90%; 
-    margin-bottom: 15px; 
-    
-  }
-  
-  
-  .form {
-    margin:0 auto;
-    width: 40%;
-    --background: #792983; 
-    --border-radius: 20px; 
-    --padding-start: 10px;
-    --padding-end: 15px;
-  }
-  .registrarboton{
-    margin:0 auto;
-    margin-top: 20px;
-    width: 40%;
-    --background: #792983; 
-    --border-radius: 20px; 
-    --padding-start: 10px;
-    --padding-end: 15px;
-  }
-  
-  h1 {
-    text-align: center; 
-    color: #792983;
-    font-family: 'Roboto', sans-serif;
-    margin: 0px 0; /* Ajusta los márgenes superior e inferior */
-  }
-  .olvidarclave {
-  color: #792983;
-  display: block; 
-  width: fit-content; 
-  margin: 0 auto; 
-  }
-  .usercampo{
-    margin-left: 40px;
-    width: 90%;
-  }
-  .usercontra{
-    margin-left: 50px;
-    width: 90%;
-  }
-  .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20%; 
-    margin-top: 20px;
-    height: auto; 
-  }
-.Textoinicio{
-  margin-top: 40px;
-  text-align: center;
-  }
+  --background: #7929831b; /* Fondo semitransparente */
+}
 
-  .profile-content {
-    --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado morado y negro */
-    color: white; /* Texto blanco para contraste */
-  }
-  .ioncarta{
-    background-color: #6a11cb;
-  }
+.profile-content {
+  --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado elegante */
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* Ocupa toda la pantalla */
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  margin: 20px 0;
+  font-size: 2rem; /* Título más grande para un mejor impacto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para resaltar el texto */
+}
+
+.Textoinicio {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo ligeramente transparente */
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra profunda */
+}
+
+ion-item {
+  width: 100%;
+  margin-bottom: 20px;
+  --background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  --border-radius: 15px; /* Bordes suaves */
+  --padding-start: 15px;
+  --padding-end: 15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  transition: box-shadow 0.3s ease-in-out; /* Transición suave */
+}
+
+ion-item:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25); /* Aumento de la sombra al pasar el mouse */
+}
+
+ion-label {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+ion-input {
+  color: white;
+  background: transparent;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.registrarboton{
+  margin:0 auto;
+  margin-top: 20px;
+  width: 40%;
+  --background: #792983; 
+  --border-radius: 20px; 
+  --padding-start: 10px;
+  --padding-end: 15px;
+}
+ion-button:hover {
+  background-color: #6a11cb; /* Cambio de color suave */
+  transform: scale(1.05); /* Efecto de ampliación suave */
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
