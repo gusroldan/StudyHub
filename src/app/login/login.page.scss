@@ -1,9 +1,9 @@
 ion-content {
-  --background: #7929831b; /* Fondo semitransparente */
+  --background: #012C56;
 }
 
 .profile-content {
-  --background: linear-gradient(145deg, #6a11cb, #000000); /* Fondo degradado elegante */
+  --background: #012C56; /* Fondo degradado elegante */
   color: white;
   padding: 20px;
   display: flex;
@@ -81,9 +81,10 @@ ion-input {
   --padding-start: 10px;
   --padding-end: 15px;
 }
-ion-button:hover {
-  background-color: #6a11cb; /* Cambio de color suave */
-  transform: scale(1.05); /* Efecto de ampliación suave */
+
+ion-button {
+  background-color: #ffb71b; /* Color amarillo */
+  color: white; /* Texto en blanco para contraste */
 }
 
 .errorMessage {
