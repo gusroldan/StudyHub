@@ -1,13 +1,13 @@
 /* Fondo degradado de la sección principal */
 .profile-content {
-  --background: linear-gradient(145deg, #a474b7, #000000); /* Manteniendo el fondo degradado original */
+  --background: #012C56; /* Manteniendo el fondo degradado original */
   padding: 20px; /* Espaciado alrededor del contenido */
   border-radius: 20px; /* Borde redondeado para el contenedor */
 }
 
 /* Contenedor principal del ion-card */
 ion-card {
-  background-color: rgba(20, 20, 20, 0.5); /* Fondo oscuro translúcido */
+  background-color: #ffb71bf3; /* Fondo oscuro translúcido */
   border-radius: 20px;
   color: white;
   overflow: hidden; /* Para aplicar los bordes redondeados a la imagen */
@@ -17,6 +17,7 @@ ion-card {
 /* Estilización de la imagen */
 ion-card img {
   width: 100%;
+  border-radius: 150px;
   height: auto;
   object-fit: cover;
   border-top-left-radius: 20px;
@@ -37,6 +38,12 @@ ion-card-title {
   color: white;
   font-weight: bold;
   font-size: 1.4rem;
+  text-align: center;
+}
+ion-card-content{
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
 
 ion-card-subtitle {
@@ -52,12 +59,32 @@ ion-card-subtitle {
   color: #000000;
 }
 
-ion-icon {
-  color: #6a11cb; /* Manteniendo el color del icono */
-}
 
+ion-card-subtitle {
+  color: #000000c1; /* Manteniendo el color gris claro */
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
 /* Estilización del botón */
 ion-button {
-  color: #6a11cb; /* Manteniendo el color morado */
+  color: #ffffff; /* Manteniendo el color morado */
 }
-
+div{
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 40px;
+}
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0px 0;
+  font-family: 'Roboto', sans-serif;
+}
+correo{
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}

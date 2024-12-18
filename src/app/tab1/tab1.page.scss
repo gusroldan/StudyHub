@@ -1,5 +1,5 @@
 ion-content {
-  --background: #a474b7;
+  --background: #012C56;
 }
 
 .form-container {
@@ -19,7 +19,7 @@ ion-item {
   border: 1px solid #ffffff33;
   margin: 0 auto;
   width: 40%;
-  --background: #792983; 
+  --background: ##FFB71B; 
   --border-radius: 20px; 
   --padding-start: 10px;
   --padding-end: 15px;
@@ -37,9 +37,9 @@ ion-item {
 
 h1 {
   text-align: center; 
-  color: #792983;
-  font-family: 'Roboto', sans-serif;
-  margin: 0px 0; /* Ajusta los márgenes superior e inferior */
+  color: #ffffff;
+  margin: 0px 0;
+  margin-top: -80px; /* Ajusta los márgenes superior e inferior */
 }
 
 .olvidarclave {
@@ -74,19 +74,33 @@ h1 {
 }
 
 .custom-button-1 {
-  --background: #792983; /* Color rojo */
+  --background: #FFB71B; /* Color rojo */
   --color: white; /* Texto en blanco */
 }
 
 .custom-button-2 {
-  --background: #792983; /* Color verde */
+  --background: #FFB71B; /* Color verde */
   --color: white; /* Texto en blanco */
 }
 ion-card {
   border: 1px solid #ffffff33;
-  background-color: #792983;
+  background-color: #FFB71B;
+  
 }
-
+ion-card-title {
+  color: #ffff;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
 li {
   color: aliceblue;
+}
+p {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+ion-card-content {
+  color: #ffff;
+  font-family: 'Roboto', sans-serif;
 }

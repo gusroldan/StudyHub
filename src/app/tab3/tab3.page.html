@@ -1,25 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Perfil Personal
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="profile-content">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Perfil Personal</ion-title>
-    </ion-toolbar>
   </ion-header>
 
-  <h1 style="text-align: center; color: #252525;">Bienvenido:</h1>
+  <h1 style="text-align: center; color: #FFB71B;font-size: 2.0rem">Bienvenido</h1>
   <ion-row class="ion-justify-content-center ion-padding">
     <ion-col size="12" class="ion-text-center">
       <!-- Nombre -->
       <ion-label class="profile-name">
         <h1>
-          <ion-input [(ngModel)]="user.name"></ion-input>
+          <ion-input style="color: #FFFF;font-size: 1.5rem;" [(ngModel)]="user.name"></ion-input>
         </h1>
       </ion-label>
     </ion-col>

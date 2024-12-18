@@ -8,9 +8,7 @@
 
 <ion-content [fullscreen]="true" class="profile-content">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Encuentra Ayudantes</ion-title>
-    </ion-toolbar>
+    <h1>Ayudantes</h1>
   </ion-header>
 
  
@@ -18,14 +16,13 @@
     <img alt="Silhouette of mountains" src="https://media.licdn.com/dms/image/v2/D4E03AQHMxLEAAnpamg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725820720421?e=2147483647&v=beta&t=gNFQ_ZuNlwwmiimD5-Bl9ytfS2D9WpKlfLGoXcR0wH0" />
     <ion-card-header>
       <ion-card-title>Gustavo Roldan</ion-card-title>
-      <ion-card-subtitle>Estudiante de 2do año</ion-card-subtitle>
-      <ion-card-subtitle>Precio: $5000/Sesion</ion-card-subtitle>
+      <ion-card-subtitle>Estudiante de segundo año</ion-card-subtitle>
       <ion-row class="ion-justify-content-center ion-padding">
         <ion-col size="12" class="ion-text-center">
           <!-- Correo -->
           <ion-item lines="none" class="profile-item">
             <ion-icon name="mail-outline" slot="start"></ion-icon>
-            <ion-label>GustavoPro777&#64;duocuc.cl</ion-label>
+            <ion-label class="correo">GustavoPro777&#64;duocuc.cl</ion-label>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -34,15 +31,17 @@
     <ion-card-content>
       Con conocimientos de Python, SQL, Java, HTML, Robloxito
     </ion-card-content>
-    <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    <div class="botonxd">
+      <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    </div>
+    
   </ion-card>
 
   <ion-card>
     <img alt="Silhouette of mountains" src="https://media.licdn.com/dms/image/v2/D4D03AQFBZ592LxKK8w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697071904218?e=2147483647&v=beta&t=jdzTqKOZI7tl0oEpjiPlavoQzsrugJBPVPQJk-nArxU" />
     <ion-card-header>
       <ion-card-title>Nicolas Hernandez</ion-card-title>
-      <ion-card-subtitle>Estudiante de 2do año</ion-card-subtitle>
-      <ion-card-subtitle>Precio: $6000/Sesion</ion-card-subtitle>
+      <ion-card-subtitle>Estudiante de segundo año</ion-card-subtitle>
       <ion-row class="ion-justify-content-center ion-padding">
         <ion-col size="12" class="ion-text-center">
           <!-- Correo -->
@@ -57,15 +56,16 @@
     <ion-card-content>
       Con conocimientos de Python, SQL, Java, HTML
     </ion-card-content>
-    <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    <div class="botonxd">
+      <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    </div>
   </ion-card>
 
   <ion-card>
     <img alt="Silhouette of mountains" src="https://media.licdn.com/dms/image/v2/D4D03AQF7c0jCW3rONQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1697080503511?e=2147483647&v=beta&t=7PLq-VD5Jt9WjCoBnua1umssNYPnl8Le1KnoxUVM3Fs" width="600"/>
     <ion-card-header>
       <ion-card-title>Luciano Tejeda</ion-card-title>
-      <ion-card-subtitle>Estudiante de 2do año</ion-card-subtitle>
-      <ion-card-subtitle>Precio: $4444/Sesion</ion-card-subtitle>
+      <ion-card-subtitle>Estudiante de segundo año</ion-card-subtitle>
       <ion-row class="ion-justify-content-center ion-padding">
         <ion-col size="12" class="ion-text-center">
           <!-- Correo -->
@@ -80,15 +80,17 @@
     <ion-card-content>
       Con conocimientos de Python, SQL, Java, HTML, ADC, Fragger
     </ion-card-content>
-    <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    <div class="botonxd">
+      <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    </div>
   </ion-card>
 
   <ion-card>
     <img alt="Silhouette of mountains" src="https://img.freepik.com/fotos-premium/joven-estudiante-universitario-masculino-libros_488220-29369.jpg" />
     <ion-card-header>
       <ion-card-title>Bastian Benavente</ion-card-title>
-      <ion-card-subtitle>Estudiante de 4do año</ion-card-subtitle>
-      <ion-card-subtitle>Precio: $9000/Sesion</ion-card-subtitle>
+      <ion-card-subtitle>Estudiante de cuarto año</ion-card-subtitle>
+      
       <ion-row class="ion-justify-content-center ion-padding">
         <ion-col size="12" class="ion-text-center">
           <!-- Correo -->
@@ -103,7 +105,9 @@
     <ion-card-content>
       Con conocimientos de Python, SQL, Java, HTML, gestion de proyectos,machine learning
     </ion-card-content>
-    <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    <div class="botonxd">
+      <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    </div>
   </ion-card>
 
   <ion-card *ngIf="user.isTutor">
@@ -111,7 +115,7 @@
     <img *ngIf="!user.profilePhoto" src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/dia-de-la-juventud-por-que-estudiar-de-joven-una-carrera-universitaria-universidad-continental-2.jpg" alt="Foto de perfil" />
     <ion-card-header>
       <ion-card-title>{{ user.name }}</ion-card-title>
-      <ion-card-subtitle>Estudiante de 4do año</ion-card-subtitle>
+      <ion-card-subtitle>Estudiante de cuarto año</ion-card-subtitle>
       <ion-row class="ion-justify-content-center ion-padding">
         <ion-col size="12" class="ion-text-center">
           <!-- Correo -->
@@ -126,6 +130,8 @@
     <ion-card-content>
       {{ user.description }}
     </ion-card-content>
-    <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    <div class="botonxd">
+      <ion-button fill="clear" (click)="IrAEnviarMensaje()">Enviar Mensaje</ion-button>
+    </div>
   </ion-card>
 </ion-content>
