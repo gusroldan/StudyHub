@@ -66,6 +66,10 @@
       <ion-label>¿Quieres ser tutor?</ion-label>
       <ion-toggle [(ngModel)]="user.isTutor" (ionChange)="toggleTutor()"></ion-toggle>
     </ion-item>
+    <ion-button expand="full" color="danger" (click)="agregarTutor()">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Postular de tutor
+    </ion-button>
   </ion-grid>
   <ion-button expand="full" color="danger" (click)="logout()">
     <ion-icon slot="start" name="log-out-outline"></ion-icon>

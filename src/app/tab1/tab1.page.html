@@ -27,5 +27,9 @@
   <ion-button expand="full" class="custom-button-2" routerLink="/tabs/tab3">
     Revisa tu propio perfil
   </ion-button>
+
+  <ion-button *ngIf='admin === 1' expand="full" class="custom-button-2" routerLink="/admin">
+    Administrador
+  </ion-button>
   
 </ion-content>

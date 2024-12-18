@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Administrar Tutores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="isLoading">
+    <ion-card-header>
+      <ion-card-title>Cargando...</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list *ngIf="!isLoading && tutoresNoAprobados.length > 0">
+    <ion-item *ngFor="let tutor of tutoresNoAprobados">
+      <ion-avatar slot="start">
+        <img [src]="tutor.imgperfil || 'assets/default-avatar.png'" alt="Avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ tutor.nombre }} {{ tutor.apellido }}</h2>
+        <p>Email: {{ tutor.email }}</p>
+        <p>Año: {{ tutor.annoestudiante }}</p>
+        <p>Descripción: {{ tutor.descripcion }}</p>
+      </ion-label>
+      <ion-button slot="end" color="success" (click)="approveTutor(tutor.id)">
+        Aprobar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="!isLoading && tutoresNoAprobados.length === 0">
+    <ion-card-header>
+      <ion-card-title>No hay tutores pendientes de aprobación</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

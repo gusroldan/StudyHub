@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { SqliteService } from '../app/services/sqlite.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,34 +8,38 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   private authenticated = false;
 
-  private readonly defaultEmail = 'admin';
-  private readonly defaultPassword = 'admin';
-
-  constructor() {
+  constructor(private database: SqliteService) {
     this.checkLocalStorage();
   }
 
   private checkLocalStorage() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('tokenauth');
     this.authenticated = !!token;
   }
 
-  login(email: string, password: string): Observable<any> {
-    if (email === this.defaultEmail && password === this.defaultPassword) {
+  async login(email: string, password: string): Promise<any> {
+    const user = await this.database.validateUser(email, password);
+  
+    if (user) {
       const token = 'fake-jwt-token'; 
-      localStorage.setItem('token', token);
+      localStorage.setItem('tokenauth', token);
+      localStorage.setItem('admin', user.admin.toString()); // Almacena el número como string en localStorage
+      const idUsuario = user.id;  // Obtener el idUsuario del usuario logueado
+      localStorage.setItem('idUsuario', idUsuario.toString());  // Guardar idUsuario en localStorage como string
       this.authenticated = true;
       this.checkLocalStorage();
-      return of({ token });
+      return { token, admin: user.admin }; // Devuelve el token y admin como número
     } else {
       this.authenticated = false;
-      return of({ error: 'Credenciales incorrectas' });
+      return { error: 'Credenciales incorrectas' };
     }
   }
+  
+
 
   logout() {
     this.authenticated = false;
-    localStorage.removeItem('token');
+    localStorage.removeItem('tokenauth');
     this.checkLocalStorage();
   }
 

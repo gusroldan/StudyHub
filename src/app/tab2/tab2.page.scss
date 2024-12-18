@@ -1,6 +1,6 @@
 /* Fondo degradado de la sección principal */
 .profile-content {
-  --background: #012C56; /* Manteniendo el fondo degradado original */
+  --background: #012C56;; /* Manteniendo el fondo degradado original */
   padding: 20px; /* Espaciado alrededor del contenido */
   border-radius: 20px; /* Borde redondeado para el contenedor */
 }
@@ -59,24 +59,16 @@ ion-card-subtitle {
   color: #000000;
 }
 
-
 ion-card-subtitle {
   color: #000000c1; /* Manteniendo el color gris claro */
   font-size: 0.8rem;
   text-align: center;
   margin-bottom: 20px;
 }
+
 /* Estilización del botón */
 ion-button {
   color: #ffffff; /* Manteniendo el color morado */
-}
-div{
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  border-radius: 40px;
 }
 h1 {
   text-align: center;
